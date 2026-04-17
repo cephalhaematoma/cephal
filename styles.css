@@ -1,0 +1,195 @@
+/* GIF Background Layer */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://i.postimg.cc/Bvkr8MYX/topographic-white-on-black.gif');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -2;
+    filter: brightness(0.4); /* Dims the background to make text pop */
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: white;
+}
+
+/* ── Press to Enter Overlay ── */
+#enterOverlay {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #000000;
+    cursor: pointer;
+    transition: all 1s ease;
+}
+
+#enterOverlay.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+#enterBtn {
+    padding: 18px 48px;
+    font-size: 14px;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    color: #ffffff;
+    background: rgba(255, 221, 69, 0.05);
+    border: 1px solid #ffdd45;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 0 20px rgba(255, 221, 69, 0.2);
+    transition: 0.3s;
+}
+
+/* ── Main Container ── */
+.profile-container {
+    max-width: 500px;
+    width: 90%;
+    background: rgba(15, 15, 15, 0.7); /* Glassmorphism */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 40px;
+    border-radius: 24px;
+    text-align: center;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #ffdd45;
+    margin-bottom: 20px;
+    box-shadow: 0 0 20px rgba(255, 221, 69, 0.3);
+}
+
+h1 {
+    font-size: 42px;
+    margin: 10px 0;
+    letter-spacing: -1px;
+    background: linear-gradient(135deg, #ffdd45, #ffad21);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+h2 {
+    color: #ffdd45;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+/* ── Section Styling ── */
+.sigma {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #cccccc;
+    margin-bottom: 30px;
+}
+
+.languages ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    padding: 0;
+    list-style: none;
+}
+
+.languages li {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 12px;
+    border-radius: 12px;
+    font-size: 14px;
+    transition: 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.languages li:hover {
+    background: rgba(255, 221, 69, 0.1);
+    border-color: #ffdd45;
+    transform: translateY(-3px);
+}
+
+/* Container for multiple social buttons */
+.social-links {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.beans {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    max-width: 250px;
+    padding: 12px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Discord Specific Style */
+.discord {
+    background: #5865F2;
+    color: white;
+}
+
+/* GitHub Specific Style */
+.github {
+    background: #24292e;
+    color: white;
+}
+
+.beans:hover {
+    filter: brightness(1.2);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.beans i {
+    font-size: 1.2rem;
+}
+
+.txt {
+    font-size: 11px;
+    color: #666;
+    margin-top: 40px;
+    font-style: italic;
+}
+
+#rainCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    pointer-events: none;
+}
