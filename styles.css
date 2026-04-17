@@ -132,9 +132,13 @@ h2 {
     transform: translateY(-3px);
 }
 
-/* ── Contact/Discord Style ── */
-.contact {
-    margin-top: 30px;
+/* Container for multiple social buttons */
+.social-links {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+    margin-top: 15px;
 }
 
 .beans {
@@ -142,19 +146,37 @@ h2 {
     align-items: center;
     justify-content: center;
     gap: 10px;
-    background: #5865F2; /* Discord Blue */
-    color: white;
+    width: 100%;
+    max-width: 250px;
     padding: 12px;
     border-radius: 12px;
     text-decoration: none;
     font-weight: 600;
-    transition: 0.3s;
     font-size: 14px;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Discord Specific Style */
+.discord {
+    background: #5865F2;
+    color: white;
+}
+
+/* GitHub Specific Style */
+.github {
+    background: #24292e;
+    color: white;
 }
 
 .beans:hover {
     filter: brightness(1.2);
-    transform: scale(1.02);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.beans i {
+    font-size: 1.2rem;
 }
 
 .txt {
